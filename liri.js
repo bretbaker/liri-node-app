@@ -18,8 +18,12 @@ const spotify = new Spotify(keys.spotify);
 
 
 // APPLICATION BODY
-// =============================================================
+// ====================================================================================================================
+// ====================================================================================================================
 
+
+// concert-this
+// ====================================================================================================================
 if (process.argv[2] === "concert-this") {
 
     let artist = process.argv[3];
@@ -47,6 +51,8 @@ if (process.argv[2] === "concert-this") {
             // always executed
         });
 
+// spotify-this-song
+// ======================================================================================================================
 } else if (process.argv[2] === "spotify-this-song") {
 
     let queryInput;
@@ -69,6 +75,8 @@ if (process.argv[2] === "concert-this") {
 
     });
 
+// movie-this
+// ======================================================================================================================
 } else if (process.argv[2] === "movie-this") {
 
     let movie;
@@ -104,25 +112,34 @@ if (process.argv[2] === "concert-this") {
             // always executed
         });
 
+// do-what-it-says
+// ======================================================================================================================
 } else if (process.argv[2] === "do-what-it-says") {
 
-    let filename = process.argv[3];
+    let filename = "random.txt";
     fs.readFile(filename, 'utf8', (err, data) => {
         if (err) {
             console.log(err);
         } else {
-            console.log(data);
+            // console.log(data);
             data = data.split(',');
-            console.log(data);
+            let tempArr = data[1].split('');
+            tempArr.shift();
+            tempArr.shift();
+            tempArr.pop();
+            tempArr = tempArr.join('');
+            // console.log(tempArr);
+            data[1] = tempArr;
+            // console.log(data[1]);
             if (data[0] === 'concert-this') {
                 let artist = data[1];
-                console.log(artist);
+                // console.log(artist);
                 artist = artist.split(' ');
-                console.log(artist);
+                // console.log(artist);
                 artist = artist.join('+');
-                console.log(artist);
+                // console.log(artist);
                 let queryURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
-                console.log(queryURL);
+                // console.log(queryURL);
                 axios.get(queryURL)
                     .then(function (response) {
                         // handle success
