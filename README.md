@@ -7,4 +7,4 @@
     - Name of the venue
     - Venue location
     - Date of the Event (formatted as "MM/DD/YYYY" using the moment.js node package)
-![Screenshot](./assets/images/concert-this-1.jpg)
+![Image 1](./assets/images/concert-this-1.jpg)
