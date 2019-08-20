@@ -7,4 +7,4 @@
     - Name of the venue
     - Venue location
     - Date of the Event (formatted as "MM/DD/YYYY" using the moment.js node package)
-![concert-this-1](/assets/images/concert-this-1.jpg)
+![](https://github.com/bretbaker808/liri-node-app/blob/master/assets/images/concert-this-1.JPG)
